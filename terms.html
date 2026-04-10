@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms &amp; Conditions — dabbl.ai</title>
+    <meta name="description" content="Terms and Conditions for dabbl.ai, a WhatsApp AI assistant by EXCOM AI.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #10B981;
+            --green-dark: #059669;
+            --green-light: #D1FAE5;
+            --navy: #0F172A;
+            --slate: #64748B;
+            --white: #FFFFFF;
+            --off-white: #F8FAFC;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--green);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: var(--white);
+            position: relative;
+        }
+
+        .logo-icon::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 6px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid var(--green);
+            border-right: 8px solid transparent;
+            border-top: 8px solid var(--green);
+            border-bottom: 8px solid transparent;
+        }
+
+        .logo-text { font-size: 1.3rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
+        .logo-text span { color: var(--green); }
+
+        .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-links a { color: var(--slate); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--white); }
+
+        .nav-cta {
+            background: var(--green);
+            color: var(--white) !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .nav-cta:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+        .page-header {
+            padding: 8rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header .updated {
+            color: var(--slate);
+            font-size: 0.9rem;
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 2rem 6rem;
+            line-height: 1.8;
+        }
+
+        .legal-content h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--white);
+        }
+
+        .legal-content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-content p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content ul, .legal-content ol {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .legal-content li { margin-bottom: 0.4rem; }
+
+        .legal-content a { color: var(--green); text-decoration: none; }
+        .legal-content a:hover { text-decoration: underline; }
+
+        .legal-content strong { color: var(--white); }
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-brand { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; }
+        .footer-brand span { font-weight: 700; font-size: 1.1rem; }
+
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .footer-links a { color: var(--slate); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--green); }
+
+        footer p { color: var(--slate); font-size: 0.85rem; }
+        footer a { color: var(--green); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .page-header { padding: 7rem 1.5rem 1.5rem; }
+            .legal-content { padding: 1.5rem 1.5rem 4rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">d</div>
+            <span class="logo-text">dabbl<span>.ai</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="index.html#start" class="nav-cta">Get started free</a>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Terms &amp; Conditions</h1>
+        <p class="updated">Last updated: April 2026</p>
+    </section>
+
+    <div class="legal-content">
+
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing or using the dabbl.ai service ("Service"), you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree to these Terms, please do not use the Service.</p>
+        <p>The Service is provided by <strong>EXCOM AI</strong> (operating as Handled / dabbl.ai), referred to as "we", "us", or "our" throughout these Terms.</p>
+
+        <h2>2. Service Description</h2>
+        <p>dabbl.ai is a WhatsApp-based AI assistant designed for users in Portugal. The Service provides:</p>
+        <ul>
+            <li>Daily briefings including weather, news, and sports scores</li>
+            <li>An AI-powered conversational assistant</li>
+            <li>Reminders and task management</li>
+            <li>Sports results and live scores</li>
+            <li>General knowledge and local information</li>
+        </ul>
+        <p>The Service is delivered exclusively through WhatsApp. No separate application download or account creation is required beyond having a WhatsApp account.</p>
+
+        <h2>3. Eligibility</h2>
+        <p>You must be at least 16 years of age to use the Service. By using the Service, you represent and warrant that you meet this age requirement and have the legal capacity to enter into these Terms.</p>
+
+        <h2>4. User Accounts</h2>
+        <p>Your dabbl.ai account is linked to your WhatsApp phone number. You are responsible for maintaining the security of your WhatsApp account and for all activities that occur through your phone number in connection with the Service.</p>
+        <p>You agree to provide accurate information and to notify us promptly if you believe your account has been compromised.</p>
+
+        <h2>5. Subscriptions and Billing</h2>
+        <h3>5.1 Free Tier</h3>
+        <p>dabbl.ai offers a free tier with limited features (5 messages per day, basic AI model). The free tier is available indefinitely without payment.</p>
+
+        <h3>5.2 Paid Plans</h3>
+        <p>We offer the following paid subscription plans:</p>
+        <ul>
+            <li><strong>dabbl+</strong> &mdash; &euro;3.99 per month (20 messages per day, advanced AI model, unlimited reminders, voice notes, priority access)</li>
+            <li><strong>Platinum</strong> &mdash; &euro;9.99 per month (50 messages per day, most powerful AI model, morning and evening briefings, complex tasks and analysis)</li>
+        </ul>
+
+        <h3>5.3 Payment Processing</h3>
+        <p>All payments are processed by <strong>Paddle.com Market Limited</strong> ("Paddle"), which acts as our Merchant of Record. When you purchase a subscription, you are buying from Paddle, which handles all payment processing, invoicing, tax calculation, and compliance. Paddle's terms of service apply to all transactions.</p>
+
+        <h3>5.4 Billing Cycle</h3>
+        <p>Subscriptions are billed monthly on a recurring basis. Your subscription will automatically renew at the end of each billing period unless you cancel before the renewal date.</p>
+
+        <h3>5.5 Price Changes</h3>
+        <p>We reserve the right to change our subscription prices. Any price changes will be communicated to you at least 30 days in advance and will take effect at the start of your next billing period.</p>
+
+        <h2>6. Cancellation</h2>
+        <p>You may cancel your subscription at any time. Upon cancellation:</p>
+        <ul>
+            <li>You will retain access to your paid plan features until the end of your current billing period.</li>
+            <li>Your account will then revert to the free tier.</li>
+            <li>No further charges will be made.</li>
+        </ul>
+        <p>For information about refunds, please see our <a href="refund.html">Refund Policy</a>.</p>
+
+        <h2>7. Acceptable Use</h2>
+        <p>You agree to use the Service in compliance with all applicable laws and regulations. You must not:</p>
+        <ul>
+            <li>Use the Service for any unlawful, harmful, or fraudulent purpose</li>
+            <li>Attempt to gain unauthorised access to any part of the Service or its systems</li>
+            <li>Use the Service to generate, distribute, or store content that is illegal, defamatory, harassing, threatening, or otherwise objectionable</li>
+            <li>Use the Service to send spam, bulk messages, or unsolicited communications</li>
+            <li>Interfere with or disrupt the Service or servers</li>
+            <li>Reverse-engineer, decompile, or attempt to extract the source code of the Service</li>
+            <li>Use automated methods (bots, scrapers) to interact with the Service beyond normal WhatsApp usage</li>
+            <li>Impersonate any person or entity</li>
+            <li>Share your subscription access with others</li>
+        </ul>
+        <p>We reserve the right to suspend or terminate your access to the Service if we reasonably believe you have violated these terms.</p>
+
+        <h2>8. AI-Generated Content</h2>
+        <p>The Service uses artificial intelligence to generate responses. While we strive for accuracy, AI-generated content may occasionally contain errors, inaccuracies, or outdated information. You should:</p>
+        <ul>
+            <li>Not rely on AI-generated content as a substitute for professional advice (medical, legal, financial, or otherwise)</li>
+            <li>Verify important information independently</li>
+            <li>Understand that AI responses do not represent the opinions or endorsements of EXCOM AI</li>
+        </ul>
+
+        <h2>9. Intellectual Property</h2>
+        <p>The Service, including its design, features, content, and underlying technology, is owned by EXCOM AI and is protected by intellectual property laws. You are granted a limited, non-exclusive, non-transferable licence to use the Service for personal, non-commercial purposes in accordance with these Terms.</p>
+        <p>Content generated by the AI in response to your queries is provided for your personal use. You retain ownership of any original content you submit to the Service.</p>
+
+        <h2>10. Privacy</h2>
+        <p>Your use of the Service is also governed by our <a href="privacy.html">Privacy Policy</a>, which describes how we collect, use, and protect your personal data.</p>
+
+        <h2>11. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law:</p>
+        <ul>
+            <li>The Service is provided "as is" and "as available" without warranties of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.</li>
+            <li>EXCOM AI shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill, arising from your use of the Service.</li>
+            <li>Our total aggregate liability for any claims arising from or related to the Service shall not exceed the amount you have paid to us in the 12 months preceding the claim.</li>
+        </ul>
+        <p>Nothing in these Terms shall limit or exclude liability for death or personal injury caused by negligence, fraud or fraudulent misrepresentation, or any other liability that cannot be excluded or limited by applicable law.</p>
+
+        <h2>12. Indemnification</h2>
+        <p>You agree to indemnify and hold harmless EXCOM AI, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including reasonable legal fees) arising from your use of the Service or violation of these Terms.</p>
+
+        <h2>13. Termination</h2>
+        <p>We may suspend or terminate your access to the Service at any time if:</p>
+        <ul>
+            <li>You breach these Terms</li>
+            <li>We are required to do so by law</li>
+            <li>We decide to discontinue the Service (with reasonable notice)</li>
+        </ul>
+        <p>Upon termination, your right to use the Service will cease immediately. Provisions of these Terms that by their nature should survive termination shall continue to apply.</p>
+
+        <h2>14. Changes to Terms</h2>
+        <p>We may update these Terms from time to time. We will notify you of any material changes via the Service (WhatsApp message) or by updating this page. Your continued use of the Service after such changes constitutes acceptance of the updated Terms.</p>
+        <p>We encourage you to review these Terms periodically.</p>
+
+        <h2>15. Governing Law and Jurisdiction</h2>
+        <p>These Terms are governed by and construed in accordance with the laws of England and Wales. Any disputes arising from or relating to these Terms or the Service shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+        <p>If you are a consumer in the European Union, you also benefit from any mandatory provisions of the law of your country of residence, and you may bring proceedings in the courts of your country of residence. You may also use the European Commission's Online Dispute Resolution platform at <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>.</p>
+
+        <h2>16. Severability</h2>
+        <p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary so that these Terms will otherwise remain in full force and effect.</p>
+
+        <h2>17. Entire Agreement</h2>
+        <p>These Terms, together with our Privacy Policy and Refund Policy, constitute the entire agreement between you and EXCOM AI regarding the use of the Service and supersede all prior agreements.</p>
+
+        <h2>18. Contact Us</h2>
+        <p>If you have any questions about these Terms, please contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:hello@handled.sh">hello@handled.sh</a><br>
+        <strong>Website:</strong> <a href="https://dabbl.ai" target="_blank">dabbl.ai</a></p>
+
+    </div>
+
+    <footer>
+        <div class="footer-brand">
+            <span>dabbl.ai</span>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="refund.html">Refund Policy</a>
+        </div>
+        <p>by <a href="https://handled.sh" target="_blank">handled.sh</a> &mdash; AI for everyone, everywhere.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">&copy; 2026 EXCOM AI. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

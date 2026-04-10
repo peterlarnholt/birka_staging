@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — dabbl.ai</title>
+    <meta name="description" content="Privacy Policy for dabbl.ai, a WhatsApp AI assistant by EXCOM AI. GDPR compliant.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #10B981;
+            --green-dark: #059669;
+            --green-light: #D1FAE5;
+            --navy: #0F172A;
+            --slate: #64748B;
+            --white: #FFFFFF;
+            --off-white: #F8FAFC;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            padding: 1.2rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(20px);
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+
+        .logo-icon {
+            width: 40px; height: 40px; background: var(--green); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; font-size: 1.4rem; color: var(--white); position: relative;
+        }
+
+        .logo-icon::after {
+            content: ''; position: absolute; bottom: -4px; left: 6px;
+            width: 0; height: 0;
+            border-left: 8px solid var(--green); border-right: 8px solid transparent;
+            border-top: 8px solid var(--green); border-bottom: 8px solid transparent;
+        }
+
+        .logo-text { font-size: 1.3rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
+        .logo-text span { color: var(--green); }
+
+        .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-links a { color: var(--slate); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--white); }
+
+        .nav-cta {
+            background: var(--green); color: var(--white) !important;
+            padding: 0.6rem 1.4rem; border-radius: 50px;
+            font-weight: 600; font-size: 0.9rem; transition: all 0.3s;
+        }
+        .nav-cta:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+        .page-header { padding: 8rem 2rem 2rem; text-align: center; }
+        .page-header h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+        .page-header .updated { color: var(--slate); font-size: 0.9rem; }
+
+        .legal-content {
+            max-width: 800px; margin: 0 auto; padding: 2rem 2rem 6rem; line-height: 1.8;
+        }
+
+        .legal-content h2 { font-size: 1.4rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 0.8rem; }
+        .legal-content h3 { font-size: 1.1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .legal-content p { color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-bottom: 1rem; }
+        .legal-content ul, .legal-content ol { color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-bottom: 1rem; padding-left: 1.5rem; }
+        .legal-content li { margin-bottom: 0.4rem; }
+        .legal-content a { color: var(--green); text-decoration: none; }
+        .legal-content a:hover { text-decoration: underline; }
+        .legal-content strong { color: var(--white); }
+
+        .data-table {
+            width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.9rem;
+        }
+        .data-table th, .data-table td {
+            padding: 0.8rem; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.8);
+        }
+        .data-table th { color: var(--white); font-weight: 600; border-bottom: 2px solid rgba(255,255,255,0.1); }
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 3rem 2rem; text-align: center;
+        }
+        .footer-brand { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; }
+        .footer-brand span { font-weight: 700; font-size: 1.1rem; }
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .footer-links a { color: var(--slate); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--green); }
+        footer p { color: var(--slate); font-size: 0.85rem; }
+        footer a { color: var(--green); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .page-header { padding: 7rem 1.5rem 1.5rem; }
+            .legal-content { padding: 1.5rem 1.5rem 4rem; }
+            .nav-links { display: none; }
+            .data-table { font-size: 0.8rem; }
+            .data-table th, .data-table td { padding: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">d</div>
+            <span class="logo-text">dabbl<span>.ai</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="index.html#start" class="nav-cta">Get started free</a>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: April 2026</p>
+    </section>
+
+    <div class="legal-content">
+
+        <h2>1. Introduction</h2>
+        <p>This Privacy Policy explains how <strong>EXCOM AI</strong> (operating as Handled / dabbl.ai), referred to as "we", "us", or "our", collects, uses, stores, and protects your personal data when you use the dabbl.ai service ("Service").</p>
+        <p>We are committed to protecting your privacy and complying with the General Data Protection Regulation (GDPR), the UK Data Protection Act 2018, and other applicable data protection laws.</p>
+
+        <h2>2. Data Controller</h2>
+        <p>EXCOM AI is the data controller for the personal data processed through the dabbl.ai service. You can contact us regarding data protection matters at:</p>
+        <p><strong>Email:</strong> <a href="mailto:hello@handled.sh">hello@handled.sh</a><br>
+        <strong>Website:</strong> <a href="https://dabbl.ai" target="_blank">dabbl.ai</a></p>
+
+        <h2>3. What Data We Collect</h2>
+        <p>We collect the minimum amount of data necessary to provide and improve the Service:</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Data Type</th>
+                    <th>Details</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Phone number</strong></td>
+                    <td>Your WhatsApp phone number</td>
+                    <td>Account identification, service delivery</td>
+                </tr>
+                <tr>
+                    <td><strong>Messages</strong></td>
+                    <td>Messages you send to dabbl.ai via WhatsApp</td>
+                    <td>Processing your requests, generating AI responses</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage data</strong></td>
+                    <td>Message count, feature usage, timestamps</td>
+                    <td>Service management (e.g., enforcing message limits), improving the Service</td>
+                </tr>
+                <tr>
+                    <td><strong>Subscription data</strong></td>
+                    <td>Subscription tier, billing status</td>
+                    <td>Managing your subscription and access level</td>
+                </tr>
+                <tr>
+                    <td><strong>Preferences</strong></td>
+                    <td>Language preference, briefing settings, reminders</td>
+                    <td>Personalising your experience</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>3.1 Data We Do NOT Collect</h3>
+        <ul>
+            <li>We do not collect your name, email address, or physical address (unless you voluntarily provide it in a message)</li>
+            <li>We do not use cookies &mdash; the Service operates entirely through WhatsApp</li>
+            <li>We do not collect location data unless you explicitly share it in a message</li>
+            <li>We do not access your WhatsApp contacts, photos, or other phone data</li>
+        </ul>
+
+        <h2>4. Legal Basis for Processing</h2>
+        <p>We process your personal data on the following legal bases under the GDPR:</p>
+        <ul>
+            <li><strong>Contract performance</strong> (Article 6(1)(b)) &mdash; Processing is necessary to provide the Service you have requested</li>
+            <li><strong>Legitimate interests</strong> (Article 6(1)(f)) &mdash; For improving the Service, preventing abuse, and ensuring security</li>
+            <li><strong>Consent</strong> (Article 6(1)(a)) &mdash; Where you have given explicit consent, such as opting in to daily briefings</li>
+            <li><strong>Legal obligation</strong> (Article 6(1)(c)) &mdash; Where required by applicable law</li>
+        </ul>
+
+        <h2>5. How We Use Your Data</h2>
+        <p>We use your data to:</p>
+        <ul>
+            <li>Provide and deliver the Service, including generating AI responses to your messages</li>
+            <li>Manage your subscription and enforce usage limits</li>
+            <li>Send you daily briefings, reminders, and other features you have enabled</li>
+            <li>Improve and develop the Service</li>
+            <li>Prevent abuse and ensure the security of the Service</li>
+            <li>Comply with legal obligations</li>
+        </ul>
+
+        <h2>6. Third Parties and Data Sharing</h2>
+        <p>We share your data with the following third parties only as necessary to provide the Service:</p>
+
+        <h3>6.1 WhatsApp / Meta</h3>
+        <p>The Service operates through the WhatsApp Business API. Your messages are transmitted via WhatsApp's infrastructure. WhatsApp/Meta's privacy policy applies to the transmission and storage of messages on their platform. We use the official WhatsApp Business API and comply with Meta's data handling requirements.</p>
+
+        <h3>6.2 Paddle (Payment Processor)</h3>
+        <p>Paddle.com Market Limited acts as our Merchant of Record for all paid subscriptions. When you subscribe to a paid plan, Paddle collects and processes your payment information directly. We do not have access to your full credit card details or payment credentials. Paddle's privacy policy governs their handling of your payment data.</p>
+
+        <h3>6.3 AI Model Providers</h3>
+        <p>We use third-party AI models to generate responses to your messages. Your message content is sent to these AI providers for processing. We select providers that offer appropriate data protection safeguards. Message content sent to AI providers is not used to train their models where such opt-out mechanisms are available.</p>
+
+        <h3>6.4 Infrastructure Providers</h3>
+        <p>We use cloud hosting providers to run the Service. These providers process data on our behalf under data processing agreements that comply with GDPR requirements.</p>
+
+        <p>We do not sell your personal data to any third party. We do not share your data with third parties for their own marketing purposes.</p>
+
+        <h2>7. International Data Transfers</h2>
+        <p>Your data may be transferred to and processed in countries outside the European Economic Area (EEA) or the UK. Where this occurs, we ensure appropriate safeguards are in place, including:</p>
+        <ul>
+            <li>Standard Contractual Clauses (SCCs) approved by the European Commission</li>
+            <li>Adequacy decisions where applicable</li>
+            <li>Other legally recognised transfer mechanisms</li>
+        </ul>
+
+        <h2>8. Data Retention</h2>
+        <p>We retain your data for as long as necessary to provide the Service and fulfil the purposes described in this policy:</p>
+        <ul>
+            <li><strong>Message content:</strong> Retained for up to 90 days to provide conversation context, then automatically deleted</li>
+            <li><strong>Usage data:</strong> Retained for up to 12 months for analytics and service improvement, then anonymised or deleted</li>
+            <li><strong>Account data (phone number, preferences):</strong> Retained for as long as you use the Service. Deleted within 30 days of account closure or upon request</li>
+            <li><strong>Subscription data:</strong> Retained for as long as required by applicable tax and accounting laws (typically 7 years for financial records)</li>
+        </ul>
+
+        <h2>9. Your Rights</h2>
+        <p>Under the GDPR and applicable data protection laws, you have the following rights:</p>
+        <ul>
+            <li><strong>Right of access</strong> &mdash; You can request a copy of the personal data we hold about you</li>
+            <li><strong>Right to rectification</strong> &mdash; You can request correction of inaccurate data</li>
+            <li><strong>Right to erasure ("right to be forgotten")</strong> &mdash; You can request deletion of your personal data</li>
+            <li><strong>Right to data portability</strong> &mdash; You can request your data in a structured, machine-readable format</li>
+            <li><strong>Right to restrict processing</strong> &mdash; You can request that we limit how we use your data</li>
+            <li><strong>Right to object</strong> &mdash; You can object to processing based on legitimate interests</li>
+            <li><strong>Right to withdraw consent</strong> &mdash; Where processing is based on consent, you can withdraw it at any time</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us at <a href="mailto:hello@handled.sh">hello@handled.sh</a>. We will respond to your request within 30 days.</p>
+        <p>You also have the right to lodge a complaint with a supervisory authority. In Portugal, the relevant authority is the Comiss&atilde;o Nacional de Prote&ccedil;&atilde;o de Dados (CNPD). In the UK, it is the Information Commissioner's Office (ICO).</p>
+
+        <h2>10. Cookies and Tracking</h2>
+        <p>The dabbl.ai service operates entirely through WhatsApp. We do not use cookies, web beacons, or similar tracking technologies on the Service itself.</p>
+        <p>Our website (dabbl.ai) may use minimal, essential cookies for basic functionality. No third-party tracking cookies are used on our website.</p>
+
+        <h2>11. Children's Privacy</h2>
+        <p>The Service is not intended for children under the age of 16. We do not knowingly collect personal data from children under 16. If we become aware that we have collected data from a child under 16, we will take steps to delete that data promptly.</p>
+
+        <h2>12. Security</h2>
+        <p>We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, alteration, disclosure, or destruction. These measures include encryption in transit, access controls, and regular security reviews.</p>
+        <p>However, no method of transmission over the internet or electronic storage is completely secure. While we strive to protect your data, we cannot guarantee absolute security.</p>
+
+        <h2>13. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify you of material changes via the Service (WhatsApp message) or by updating this page. The "Last updated" date at the top of this page indicates when the policy was last revised.</p>
+
+        <h2>14. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy or wish to exercise your data protection rights, please contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:hello@handled.sh">hello@handled.sh</a><br>
+        <strong>Website:</strong> <a href="https://dabbl.ai" target="_blank">dabbl.ai</a></p>
+
+    </div>
+
+    <footer>
+        <div class="footer-brand">
+            <span>dabbl.ai</span>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="refund.html">Refund Policy</a>
+        </div>
+        <p>by <a href="https://handled.sh" target="_blank">handled.sh</a> &mdash; AI for everyone, everywhere.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">&copy; 2026 EXCOM AI. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund Policy — dabbl.ai</title>
+    <meta name="description" content="Refund Policy for dabbl.ai subscriptions. Cancel anytime, 14-day cooling-off period for EU consumers.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #10B981;
+            --green-dark: #059669;
+            --green-light: #D1FAE5;
+            --navy: #0F172A;
+            --slate: #64748B;
+            --white: #FFFFFF;
+            --off-white: #F8FAFC;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--navy);
+            color: var(--white);
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            padding: 1.2rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            backdrop-filter: blur(20px);
+            background: rgba(15, 23, 42, 0.8);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+
+        .logo-icon {
+            width: 40px; height: 40px; background: var(--green); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; font-size: 1.4rem; color: var(--white); position: relative;
+        }
+
+        .logo-icon::after {
+            content: ''; position: absolute; bottom: -4px; left: 6px;
+            width: 0; height: 0;
+            border-left: 8px solid var(--green); border-right: 8px solid transparent;
+            border-top: 8px solid var(--green); border-bottom: 8px solid transparent;
+        }
+
+        .logo-text { font-size: 1.3rem; font-weight: 800; color: var(--white); letter-spacing: -0.02em; }
+        .logo-text span { color: var(--green); }
+
+        .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-links a { color: var(--slate); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--white); }
+
+        .nav-cta {
+            background: var(--green); color: var(--white) !important;
+            padding: 0.6rem 1.4rem; border-radius: 50px;
+            font-weight: 600; font-size: 0.9rem; transition: all 0.3s;
+        }
+        .nav-cta:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+        .page-header { padding: 8rem 2rem 2rem; text-align: center; }
+        .page-header h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+        .page-header .updated { color: var(--slate); font-size: 0.9rem; }
+
+        .legal-content {
+            max-width: 800px; margin: 0 auto; padding: 2rem 2rem 6rem; line-height: 1.8;
+        }
+
+        .legal-content h2 { font-size: 1.4rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 0.8rem; }
+        .legal-content h3 { font-size: 1.1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .legal-content p { color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-bottom: 1rem; }
+        .legal-content ul, .legal-content ol { color: rgba(255,255,255,0.8); font-size: 0.95rem; margin-bottom: 1rem; padding-left: 1.5rem; }
+        .legal-content li { margin-bottom: 0.4rem; }
+        .legal-content a { color: var(--green); text-decoration: none; }
+        .legal-content a:hover { text-decoration: underline; }
+        .legal-content strong { color: var(--white); }
+
+        .highlight-box {
+            background: rgba(16,185,129,0.08);
+            border: 1px solid rgba(16,185,129,0.2);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box h3 {
+            color: var(--green);
+            margin-top: 0;
+        }
+
+        .highlight-box p { margin-bottom: 0.5rem; }
+        .highlight-box p:last-child { margin-bottom: 0; }
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 3rem 2rem; text-align: center;
+        }
+        .footer-brand { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; }
+        .footer-brand span { font-weight: 700; font-size: 1.1rem; }
+        .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .footer-links a { color: var(--slate); text-decoration: none; font-size: 0.85rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--green); }
+        footer p { color: var(--slate); font-size: 0.85rem; }
+        footer a { color: var(--green); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .page-header { padding: 7rem 1.5rem 1.5rem; }
+            .legal-content { padding: 1.5rem 1.5rem 4rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <div class="logo-icon">d</div>
+            <span class="logo-text">dabbl<span>.ai</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="index.html#start" class="nav-cta">Get started free</a>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Refund Policy</h1>
+        <p class="updated">Last updated: April 2026</p>
+    </section>
+
+    <div class="legal-content">
+
+        <h2>1. Overview</h2>
+        <p>This Refund Policy applies to all paid subscriptions for the dabbl.ai service ("Service") provided by <strong>EXCOM AI</strong> (operating as Handled / dabbl.ai). All payments are processed by <strong>Paddle.com Market Limited</strong> ("Paddle"), which acts as our Merchant of Record.</p>
+        <p>We want you to be satisfied with dabbl.ai. If you are not, we are committed to making things right.</p>
+
+        <h2>2. Subscription Cancellation</h2>
+        <p>You may cancel your dabbl.ai subscription at any time. Here is what happens when you cancel:</p>
+        <ul>
+            <li>Your cancellation takes effect at the <strong>end of your current billing period</strong>. You will continue to have full access to your paid plan's features until then.</li>
+            <li>After your billing period ends, your account will automatically revert to the <strong>free tier</strong> (5 messages per day, basic AI model).</li>
+            <li>No further charges will be made to your payment method.</li>
+            <li>You can re-subscribe at any time if you change your mind.</li>
+        </ul>
+
+        <div class="highlight-box">
+            <h3>How to cancel</h3>
+            <p>You can cancel your subscription by:</p>
+            <ul>
+                <li>Sending a message to dabbl.ai on WhatsApp saying "cancel subscription"</li>
+                <li>Emailing us at <a href="mailto:hello@handled.sh">hello@handled.sh</a></li>
+                <li>Using the subscription management link in your Paddle receipt email</li>
+            </ul>
+        </div>
+
+        <h2>3. EU Consumer Right of Withdrawal (Cooling-Off Period)</h2>
+        <p>If you are a consumer in the European Union, you have the right to withdraw from your subscription within <strong>14 days</strong> of your initial purchase, without giving any reason, in accordance with EU Directive 2011/83/EU.</p>
+        <p>During this 14-day cooling-off period:</p>
+        <ul>
+            <li>You may request a <strong>full refund</strong> of your subscription payment.</li>
+            <li>This right applies to your first subscription payment only.</li>
+            <li>To exercise this right, contact us at <a href="mailto:hello@handled.sh">hello@handled.sh</a> with your request.</li>
+        </ul>
+        <p>Please note that if you have actively used the Service during the cooling-off period, we may deduct an amount proportional to the services provided up to the point of withdrawal.</p>
+
+        <h2>4. Discretionary Refunds</h2>
+        <p>Outside the EU cooling-off period, refunds are handled on a case-by-case basis at our discretion. We may offer refunds in situations including, but not limited to:</p>
+        <ul>
+            <li>Technical issues that prevented you from using the Service for a significant portion of your billing period</li>
+            <li>Being charged after you attempted to cancel your subscription</li>
+            <li>Duplicate or erroneous charges</li>
+            <li>Other circumstances where a refund is fair and reasonable</li>
+        </ul>
+        <p>We may offer a full refund, a pro-rata refund based on the unused portion of your billing period, or account credit, depending on the circumstances.</p>
+
+        <h2>5. How to Request a Refund</h2>
+        <p>To request a refund, please contact us using one of the following methods:</p>
+
+        <div class="highlight-box">
+            <h3>Contact us for a refund</h3>
+            <p><strong>Email:</strong> <a href="mailto:hello@handled.sh">hello@handled.sh</a></p>
+            <p><strong>WhatsApp:</strong> Send a message to dabbl.ai saying "I'd like a refund"</p>
+            <p><strong>Paddle:</strong> You can also contact Paddle directly using the link in your receipt email</p>
+        </div>
+
+        <p>When requesting a refund, please include:</p>
+        <ul>
+            <li>The phone number associated with your dabbl.ai account</li>
+            <li>The reason for your refund request</li>
+            <li>Your Paddle receipt or transaction reference (if available)</li>
+        </ul>
+
+        <h2>6. Processing Time</h2>
+        <p>We aim to respond to all refund requests within <strong>2 business days</strong>. Once a refund is approved:</p>
+        <ul>
+            <li>Refunds are processed by Paddle and typically take <strong>5&ndash;10 business days</strong> to appear on your statement, depending on your payment method and financial institution.</li>
+            <li>Refunds will be issued to the original payment method used for the purchase.</li>
+            <li>You will receive a confirmation email from Paddle once the refund has been processed.</li>
+        </ul>
+
+        <h2>7. Free Tier</h2>
+        <p>The dabbl.ai free tier is available at no cost and does not involve any payment. As no charge is made, refunds do not apply to the free tier.</p>
+
+        <h2>8. Chargebacks</h2>
+        <p>If you have a concern about a charge, we encourage you to contact us first before initiating a chargeback with your bank or payment provider. We are committed to resolving any billing issues quickly and fairly. Initiating a chargeback without contacting us may result in the suspension of your account.</p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>We may update this Refund Policy from time to time. Any changes will be posted on this page with an updated "Last updated" date. Material changes will be communicated to you via the Service or email.</p>
+
+        <h2>10. Contact Us</h2>
+        <p>If you have any questions about this Refund Policy, please contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:hello@handled.sh">hello@handled.sh</a><br>
+        <strong>Website:</strong> <a href="https://dabbl.ai" target="_blank">dabbl.ai</a></p>
+
+    </div>
+
+    <footer>
+        <div class="footer-brand">
+            <span>dabbl.ai</span>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="terms.html">Terms &amp; Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="refund.html">Refund Policy</a>
+        </div>
+        <p>by <a href="https://handled.sh" target="_blank">handled.sh</a> &mdash; AI for everyone, everywhere.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">&copy; 2026 EXCOM AI. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
