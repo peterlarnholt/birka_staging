@@ -97,6 +97,48 @@
             color: var(--green);
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .lang-toggle {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            padding: 0.35rem 0.2rem;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+            gap: 0;
+            user-select: none;
+            transition: border-color 0.3s;
+        }
+
+        .lang-toggle:hover {
+            border-color: rgba(255,255,255,0.25);
+        }
+
+        .lang-option {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 50px;
+            transition: all 0.25s;
+            color: var(--slate);
+            font-size: 0.78rem;
+            letter-spacing: 0.02em;
+        }
+
+        .lang-option.active {
+            background: rgba(16,185,129,0.15);
+            color: var(--white);
+        }
+
         .nav-cta {
             background: var(--green);
             color: var(--white);
@@ -572,8 +614,7 @@
             box-shadow: 0 0 40px rgba(16,185,129,0.1);
         }
 
-        .price-card.featured::before {
-            content: 'Mais popular';
+        .price-card.featured .featured-badge {
             position: absolute;
             top: -12px;
             left: 50%;
@@ -584,6 +625,7 @@
             border-radius: 50px;
             font-size: 0.75rem;
             font-weight: 600;
+            white-space: nowrap;
         }
 
         .price-name {
@@ -626,7 +668,7 @@
         }
 
         .price-features li::before {
-            content: '✓';
+            content: '\2713';
             color: var(--green);
             font-weight: 700;
         }
@@ -731,6 +773,8 @@
             .step { flex-direction: column; text-align: center; }
             .wc-banner { padding: 2rem 1.5rem; }
             .features-grid { grid-template-columns: 1fr; }
+            .lang-toggle { padding: 0.25rem 0.15rem; }
+            .lang-option { padding: 0.2rem 0.4rem; font-size: 0.72rem; }
         }
     </style>
 </head>
@@ -742,23 +786,29 @@
             <div class="logo-icon">d</div>
             <span class="logo-text">dabbl<span>.ai</span></span>
         </a>
-        <a href="#start" class="nav-cta">Começar grátis</a>
+        <div class="nav-right">
+            <div class="lang-toggle" id="langToggle" role="button" aria-label="Toggle language">
+                <span class="lang-option active" data-lang="pt">&#127477;&#127481; PT</span>
+                <span class="lang-option" data-lang="en">&#127468;&#127463; EN</span>
+            </div>
+            <a href="#start" class="nav-cta" data-i18n="nav-cta">Comecar gratis</a>
+        </div>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
         <div class="hero-badge">
             <span class="dot"></span>
-            Já disponível no WhatsApp
+            <span data-i18n="hero-badge">Ja disponivel no WhatsApp</span>
         </div>
-        <h1>A tua IA.<br><span class="highlight">No WhatsApp.</span></h1>
-        <p class="hero-sub">Briefings diários, resultados ao vivo, lembretes e um assistente inteligente — tudo na app que já usas. Grátis.</p>
+        <h1 data-i18n="hero-h1">A tua IA.<br><span class="highlight">No WhatsApp.</span></h1>
+        <p class="hero-sub" data-i18n="hero-sub">Briefings diarios, resultados ao vivo, lembretes e um assistente inteligente &mdash; tudo na app que ja usas. Gratis.</p>
         <div class="hero-cta-group">
-            <a href="#start" class="cta-primary">
+            <a href="#start" class="cta-primary" data-i18n="cta-primary">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.214L4 20l1.214-3.757A8 8 0 1112 20z"/></svg>
                 Abrir no WhatsApp
             </a>
-            <a href="#features" class="cta-secondary">Descobre o que faz ↓</a>
+            <a href="#features" class="cta-secondary" data-i18n="cta-secondary">Descobre o que faz &#8595;</a>
         </div>
     </section>
 
@@ -808,66 +858,66 @@
     <!-- Features -->
     <section class="features" id="features">
         <div class="features-header">
-            <h2>Tudo o que precisas.<br>Nada para instalar.</h2>
-            <p>Basta enviar uma mensagem. O dabbl trata do resto.</p>
+            <h2 data-i18n="features-h2">Tudo o que precisas.<br>Nada para instalar.</h2>
+            <p data-i18n="features-p">Basta enviar uma mensagem. O dabbl trata do resto.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">☀️</div>
-                <h3>Briefing Matinal</h3>
-                <p>Meteorologia, notícias, resultados desportivos e uma dica diária — entregue no teu chat todas as manhãs. Diz "Bom dia" para começar o teu dia.</p>
+                <h3 data-i18n="feat1-h3">Briefing Matinal</h3>
+                <p data-i18n="feat1-p">Meteorologia, noticias, resultados desportivos e uma dica diaria &mdash; entregue no teu chat todas as manhas. Diz "Bom dia" para comecar o teu dia.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">⚽</div>
-                <h3>Resultados em Direto</h3>
-                <p>Liga Portugal, Champions League, Mundial 2026. Resultados em tempo real, onzes, classificações — pergunta quando quiseres ou recebe alertas.</p>
+                <h3 data-i18n="feat2-h3">Resultados em Direto</h3>
+                <p data-i18n="feat2-p">Liga Portugal, Champions League, Mundial 2026. Resultados em tempo real, onzes, classificacoes &mdash; pergunta quando quiseres ou recebe alertas.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🧠</div>
-                <h3>Assistente Inteligente</h3>
-                <p>Pergunta o que quiseres. Traduz, escreve, pesquisa, calcula. Com a IA mais avançada — na tua língua, com o teu contexto local.</p>
+                <h3 data-i18n="feat3-h3">Assistente Inteligente</h3>
+                <p data-i18n="feat3-p">Pergunta o que quiseres. Traduz, escreve, pesquisa, calcula. Com a IA mais avancada &mdash; na tua lingua, com o teu contexto local.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔔</div>
-                <h3>Lembretes e Tarefas</h3>
-                <p>"Lembra-me de pagar a renda no dia 1." Lembretes simples, em linguagem natural, que realmente funcionam. Sem precisar de app.</p>
+                <h3 data-i18n="feat4-h3">Lembretes e Tarefas</h3>
+                <p data-i18n="feat4-p">"Lembra-me de pagar a renda no dia 1." Lembretes simples, em linguagem natural, que realmente funcionam. Sem precisar de app.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🇵🇹</div>
-                <h3>Feito para Portugal</h3>
-                <p>Português europeu. Não brasileiro. Notícias locais, meteorologia, prazos do IRS, rastreamento CTT. Feito por quem compreende Portugal.</p>
+                <h3 data-i18n="feat5-h3">Feito para Portugal</h3>
+                <p data-i18n="feat5-p">Portugues europeu. Nao brasileiro. Noticias locais, meteorologia, prazos do IRS, rastreamento CTT. Feito por quem compreende Portugal.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">💬</div>
-                <h3>No WhatsApp</h3>
-                <p>Sem app nova. Sem conta. Sem password. Basta abrir o WhatsApp e começar a conversar. É assim tão simples.</p>
+                <h3 data-i18n="feat6-h3">No WhatsApp</h3>
+                <p data-i18n="feat6-p">Sem app nova. Sem conta. Sem password. Basta abrir o WhatsApp e comecar a conversar. E assim tao simples.</p>
             </div>
         </div>
     </section>
 
     <!-- How it works -->
     <section class="how">
-        <h2>Começa em 30 segundos</h2>
+        <h2 data-i18n="how-h2">Comeca em 30 segundos</h2>
         <div class="steps">
             <div class="step">
                 <div class="step-num">1</div>
                 <div class="step-text">
-                    <h3>Clica em "Abrir no WhatsApp"</h3>
-                    <p>Abre uma conversa com o dabbl — como se fosse um amigo.</p>
+                    <h3 data-i18n="step1-h3">Clica em "Abrir no WhatsApp"</h3>
+                    <p data-i18n="step1-p">Abre uma conversa com o dabbl &mdash; como se fosse um amigo.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-num">2</div>
                 <div class="step-text">
-                    <h3>Diz "Bom dia"</h3>
-                    <p>Recebe o teu primeiro briefing matinal instantaneamente. Meteorologia, notícias, resultados — personalizado para ti.</p>
+                    <h3 data-i18n="step2-h3">Diz "Bom dia"</h3>
+                    <p data-i18n="step2-p">Recebe o teu primeiro briefing matinal instantaneamente. Meteorologia, noticias, resultados &mdash; personalizado para ti.</p>
                 </div>
             </div>
             <div class="step">
                 <div class="step-num">3</div>
                 <div class="step-text">
-                    <h3>Pergunta o que quiseres</h3>
-                    <p>Traduz um documento. Consulta resultados de futebol. Define um lembrete. O dabbl trata de tudo.</p>
+                    <h3 data-i18n="step3-h3">Pergunta o que quiseres</h3>
+                    <p data-i18n="step3-p">Traduz um documento. Consulta resultados de futebol. Define um lembrete. O dabbl trata de tudo.</p>
                 </div>
             </div>
         </div>
@@ -876,82 +926,83 @@
     <!-- World Cup Banner -->
     <section class="wc-banner">
         <div class="emoji">⚽</div>
-        <h3>Mundial <span>2026</span></h3>
-        <p>Resultados em direto, previsões de jogos, classificações, estatísticas — tudo no teu WhatsApp. Portugal está no Grupo F.</p>
+        <h3 data-i18n="wc-h3">Mundial <span>2026</span></h3>
+        <p data-i18n="wc-p">Resultados em direto, previsoes de jogos, classificacoes, estatisticas &mdash; tudo no teu WhatsApp. Portugal esta no Grupo F.</p>
         <div class="countdown" id="countdown">
             <div class="countdown-item">
                 <div class="countdown-num" id="days">--</div>
-                <div class="countdown-label">Dias</div>
+                <div class="countdown-label" data-i18n="cd-days">Dias</div>
             </div>
             <div class="countdown-item">
                 <div class="countdown-num" id="hours">--</div>
-                <div class="countdown-label">Horas</div>
+                <div class="countdown-label" data-i18n="cd-hours">Horas</div>
             </div>
             <div class="countdown-item">
                 <div class="countdown-num" id="mins">--</div>
-                <div class="countdown-label">Minutos</div>
+                <div class="countdown-label" data-i18n="cd-mins">Minutos</div>
             </div>
         </div>
     </section>
 
     <!-- Pricing -->
     <section class="pricing" id="pricing">
-        <h2>Preços simples</h2>
-        <p class="pricing-sub">Começa grátis. Faz upgrade quando quiseres mais.</p>
+        <h2 data-i18n="pricing-h2">Precos simples</h2>
+        <p class="pricing-sub" data-i18n="pricing-sub">Comeca gratis. Faz upgrade quando quiseres mais.</p>
         <div class="pricing-grid">
             <div class="price-card">
-                <div class="price-name">Grátis</div>
-                <div class="price-amount">€0 <span>/ para sempre</span></div>
-                <div class="price-desc">Tudo para começar. Sem compromisso.</div>
+                <div class="price-name" data-i18n="p1-name">Gratis</div>
+                <div class="price-amount" data-i18n="p1-amount">&euro;0 <span>/ para sempre</span></div>
+                <div class="price-desc" data-i18n="p1-desc">Tudo para comecar. Sem compromisso.</div>
                 <ul class="price-features">
-                    <li>5 mensagens por dia</li>
-                    <li>Briefing a pedido ("Bom dia")</li>
-                    <li>Resultados desportivos</li>
-                    <li>1 lembrete</li>
-                    <li>Conhecimento local</li>
-                    <li>Português europeu (PT-PT)</li>
-                    <li>Modelo IA básico</li>
+                    <li data-i18n="p1-f1">5 mensagens por dia</li>
+                    <li data-i18n="p1-f2">Briefing a pedido ("Bom dia")</li>
+                    <li data-i18n="p1-f3">Resultados desportivos</li>
+                    <li data-i18n="p1-f4">1 lembrete</li>
+                    <li data-i18n="p1-f5">Conhecimento local</li>
+                    <li data-i18n="p1-f6">Portugues europeu (PT-PT)</li>
+                    <li data-i18n="p1-f7">Modelo IA basico</li>
                 </ul>
-                <a href="#start" class="price-cta price-cta-free">Começar</a>
+                <a href="#start" class="price-cta price-cta-free" data-i18n="p1-cta">Comecar</a>
             </div>
             <div class="price-card featured">
+                <div class="featured-badge" data-i18n="popular-badge">Mais popular</div>
                 <div class="price-name">dabbl+</div>
-                <div class="price-amount">€3.99 <span>/ mês</span></div>
-                <div class="price-desc">O teu companheiro diário de IA.</div>
+                <div class="price-amount" data-i18n="p2-amount">&euro;3.99 <span>/ mes</span></div>
+                <div class="price-desc" data-i18n="p2-desc">O teu companheiro diario de IA.</div>
                 <ul class="price-features">
-                    <li>20 mensagens por dia</li>
-                    <li>Briefing diário às 7:30</li>
-                    <li>Modelo IA avançado</li>
-                    <li>Lembretes ilimitados</li>
-                    <li>Notas de voz</li>
-                    <li>Sem anúncios</li>
-                    <li>Acesso prioritário</li>
+                    <li data-i18n="p2-f1">20 mensagens por dia</li>
+                    <li data-i18n="p2-f2">Briefing diario as 7:30</li>
+                    <li data-i18n="p2-f3">Modelo IA avancado</li>
+                    <li data-i18n="p2-f4">Lembretes ilimitados</li>
+                    <li data-i18n="p2-f5">Notas de voz</li>
+                    <li data-i18n="p2-f6">Sem anuncios</li>
+                    <li data-i18n="p2-f7">Acesso prioritario</li>
                 </ul>
-                <a href="#start" class="price-cta price-cta-primary">Experimentar grátis</a>
+                <a href="#start" class="price-cta price-cta-primary" data-i18n="p2-cta">Experimentar gratis</a>
             </div>
             <div class="price-card">
                 <div class="price-name">Platinum</div>
-                <div class="price-amount">€9.99 <span>/ mês</span></div>
-                <div class="price-desc">Sem limites. O teu analista pessoal.</div>
+                <div class="price-amount" data-i18n="p3-amount">&euro;9.99 <span>/ mes</span></div>
+                <div class="price-desc" data-i18n="p3-desc">Sem limites. O teu analista pessoal.</div>
                 <ul class="price-features">
-                    <li>50 mensagens por dia</li>
-                    <li>Briefing manhã + noite</li>
-                    <li>Modelo IA mais potente</li>
-                    <li>Lembretes ilimitados</li>
-                    <li>Notas de voz</li>
-                    <li>Respostas prioritárias</li>
-                    <li>Tarefas complexas e análise</li>
+                    <li data-i18n="p3-f1">50 mensagens por dia</li>
+                    <li data-i18n="p3-f2">Briefing manha + noite</li>
+                    <li data-i18n="p3-f3">Modelo IA mais potente</li>
+                    <li data-i18n="p3-f4">Lembretes ilimitados</li>
+                    <li data-i18n="p3-f5">Notas de voz</li>
+                    <li data-i18n="p3-f6">Respostas prioritarias</li>
+                    <li data-i18n="p3-f7">Tarefas complexas e analise</li>
                 </ul>
-                <a href="#start" class="price-cta price-cta-free">Em breve</a>
+                <a href="#start" class="price-cta price-cta-free" data-i18n="p3-cta">Em breve</a>
             </div>
         </div>
     </section>
 
     <!-- Final CTA -->
     <section class="hero" style="min-height: auto; padding: 4rem 2rem 6rem;" id="start">
-        <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1rem;">Pronto para dabbl?</h2>
-        <p class="hero-sub" style="margin-bottom: 2rem;">Abre o WhatsApp e diz olá. Demora 30 segundos.</p>
-        <a href="#" class="cta-primary">
+        <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1rem;" data-i18n="final-h2">Pronto para dabbl?</h2>
+        <p class="hero-sub" style="margin-bottom: 2rem;" data-i18n="final-p">Abre o WhatsApp e diz ola. Demora 30 segundos.</p>
+        <a href="#" class="cta-primary" data-i18n="final-cta">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width:24px;height:24px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.214L4 20l1.214-3.757A8 8 0 1112 20z"/></svg>
             Abrir no WhatsApp
         </a>
@@ -963,16 +1014,210 @@
             <span>dabbl.ai</span>
         </div>
         <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
-            <a href="pricing.html" style="color: var(--slate); text-decoration: none; font-size: 0.85rem;">Pricing</a>
-            <a href="terms.html" style="color: var(--slate); text-decoration: none; font-size: 0.85rem;">Terms &amp; Conditions</a>
-            <a href="privacy.html" style="color: var(--slate); text-decoration: none; font-size: 0.85rem;">Privacy Policy</a>
-            <a href="refund.html" style="color: var(--slate); text-decoration: none; font-size: 0.85rem;">Refund Policy</a>
+            <a href="pricing.html" style="color: var(--slate); text-decoration: none; font-size: 0.85rem;" data-i18n="foot-pricing">Pricing</a>
+            <a href="terms.html" style="color: var(--slate); text-decoration: none; font-size: 0.85rem;" data-i18n="foot-terms">Terms &amp; Conditions</a>
+            <a href="privacy.html" style="color: var(--slate); text-decoration: none; font-size: 0.85rem;" data-i18n="foot-privacy">Privacy Policy</a>
+            <a href="refund.html" style="color: var(--slate); text-decoration: none; font-size: 0.85rem;" data-i18n="foot-refund">Refund Policy</a>
         </div>
-        <p>by <a href="https://handled.sh" target="_blank">handled.sh</a> — IA para todos, em todo o lado.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem;">© 2026 EXCOM AI. Todos os direitos reservados.</p>
+        <p data-i18n="foot-tagline">by <a href="https://handled.sh" target="_blank">handled.sh</a> &mdash; IA para todos, em todo o lado.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;" data-i18n="foot-copy">&copy; 2026 EXCOM AI. Todos os direitos reservados.</p>
     </footer>
 
     <script>
+        // Translation data
+        const i18n = {
+            pt: {
+                'nav-cta': 'Come\u00e7ar gr\u00e1tis',
+                'hero-badge': 'J\u00e1 dispon\u00edvel no WhatsApp',
+                'hero-h1': 'A tua IA.<br><span class="highlight">No WhatsApp.</span>',
+                'hero-sub': 'Briefings di\u00e1rios, resultados ao vivo, lembretes e um assistente inteligente \u2014 tudo na app que j\u00e1 usas. Gr\u00e1tis.',
+                'cta-primary': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.214L4 20l1.214-3.757A8 8 0 1112 20z"/></svg> Abrir no WhatsApp',
+                'cta-secondary': 'Descobre o que faz \u2193',
+                'features-h2': 'Tudo o que precisas.<br>Nada para instalar.',
+                'features-p': 'Basta enviar uma mensagem. O dabbl trata do resto.',
+                'feat1-h3': 'Briefing Matinal',
+                'feat1-p': 'Meteorologia, not\u00edcias, resultados desportivos e uma dica di\u00e1ria \u2014 entregue no teu chat todas as manh\u00e3s. Diz \u201cBom dia\u201d para come\u00e7ar o teu dia.',
+                'feat2-h3': 'Resultados em Direto',
+                'feat2-p': 'Liga Portugal, Champions League, Mundial 2026. Resultados em tempo real, onzes, classifica\u00e7\u00f5es \u2014 pergunta quando quiseres ou recebe alertas.',
+                'feat3-h3': 'Assistente Inteligente',
+                'feat3-p': 'Pergunta o que quiseres. Traduz, escreve, pesquisa, calcula. Com a IA mais avan\u00e7ada \u2014 na tua l\u00edngua, com o teu contexto local.',
+                'feat4-h3': 'Lembretes e Tarefas',
+                'feat4-p': '\u201cLembra-me de pagar a renda no dia 1.\u201d Lembretes simples, em linguagem natural, que realmente funcionam. Sem precisar de app.',
+                'feat5-h3': 'Feito para Portugal',
+                'feat5-p': 'Portugu\u00eas europeu. N\u00e3o brasileiro. Not\u00edcias locais, meteorologia, prazos do IRS, rastreamento CTT. Feito por quem compreende Portugal.',
+                'feat6-h3': 'No WhatsApp',
+                'feat6-p': 'Sem app nova. Sem conta. Sem password. Basta abrir o WhatsApp e come\u00e7ar a conversar. \u00c9 assim t\u00e3o simples.',
+                'how-h2': 'Come\u00e7a em 30 segundos',
+                'step1-h3': 'Clica em \u201cAbrir no WhatsApp\u201d',
+                'step1-p': 'Abre uma conversa com o dabbl \u2014 como se fosse um amigo.',
+                'step2-h3': 'Diz \u201cBom dia\u201d',
+                'step2-p': 'Recebe o teu primeiro briefing matinal instantaneamente. Meteorologia, not\u00edcias, resultados \u2014 personalizado para ti.',
+                'step3-h3': 'Pergunta o que quiseres',
+                'step3-p': 'Traduz um documento. Consulta resultados de futebol. Define um lembrete. O dabbl trata de tudo.',
+                'wc-h3': 'Mundial <span>2026</span>',
+                'wc-p': 'Resultados em direto, previs\u00f5es de jogos, classifica\u00e7\u00f5es, estat\u00edsticas \u2014 tudo no teu WhatsApp. Portugal est\u00e1 no Grupo F.',
+                'cd-days': 'Dias',
+                'cd-hours': 'Horas',
+                'cd-mins': 'Minutos',
+                'pricing-h2': 'Pre\u00e7os simples',
+                'pricing-sub': 'Come\u00e7a gr\u00e1tis. Faz upgrade quando quiseres mais.',
+                'p1-name': 'Gr\u00e1tis',
+                'p1-amount': '\u20ac0 <span>/ para sempre</span>',
+                'p1-desc': 'Tudo para come\u00e7ar. Sem compromisso.',
+                'p1-f1': '5 mensagens por dia',
+                'p1-f2': 'Briefing a pedido (\u201cBom dia\u201d)',
+                'p1-f3': 'Resultados desportivos',
+                'p1-f4': '1 lembrete',
+                'p1-f5': 'Conhecimento local',
+                'p1-f6': 'Portugu\u00eas europeu (PT-PT)',
+                'p1-f7': 'Modelo IA b\u00e1sico',
+                'p1-cta': 'Come\u00e7ar',
+                'popular-badge': 'Mais popular',
+                'p2-amount': '\u20ac3.99 <span>/ m\u00eas</span>',
+                'p2-desc': 'O teu companheiro di\u00e1rio de IA.',
+                'p2-f1': '20 mensagens por dia',
+                'p2-f2': 'Briefing di\u00e1rio \u00e0s 7:30',
+                'p2-f3': 'Modelo IA avan\u00e7ado',
+                'p2-f4': 'Lembretes ilimitados',
+                'p2-f5': 'Notas de voz',
+                'p2-f6': 'Sem an\u00fancios',
+                'p2-f7': 'Acesso priorit\u00e1rio',
+                'p2-cta': 'Experimentar gr\u00e1tis',
+                'p3-amount': '\u20ac9.99 <span>/ m\u00eas</span>',
+                'p3-desc': 'Sem limites. O teu analista pessoal.',
+                'p3-f1': '50 mensagens por dia',
+                'p3-f2': 'Briefing manh\u00e3 + noite',
+                'p3-f3': 'Modelo IA mais potente',
+                'p3-f4': 'Lembretes ilimitados',
+                'p3-f5': 'Notas de voz',
+                'p3-f6': 'Respostas priorit\u00e1rias',
+                'p3-f7': 'Tarefas complexas e an\u00e1lise',
+                'p3-cta': 'Em breve',
+                'final-h2': 'Pronto para dabbl?',
+                'final-p': 'Abre o WhatsApp e diz ol\u00e1. Demora 30 segundos.',
+                'final-cta': '<svg viewBox="0 0 24 24" fill="currentColor" style="width:24px;height:24px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.214L4 20l1.214-3.757A8 8 0 1112 20z"/></svg> Abrir no WhatsApp',
+                'foot-pricing': 'Pricing',
+                'foot-terms': 'Terms & Conditions',
+                'foot-privacy': 'Privacy Policy',
+                'foot-refund': 'Refund Policy',
+                'foot-tagline': 'by <a href="https://handled.sh" target="_blank">handled.sh</a> \u2014 IA para todos, em todo o lado.',
+                'foot-copy': '\u00a9 2026 EXCOM AI. Todos os direitos reservados.'
+            },
+            en: {
+                'nav-cta': 'Start free',
+                'hero-badge': 'Now available on WhatsApp',
+                'hero-h1': 'Your AI.<br><span class="highlight">On WhatsApp.</span>',
+                'hero-sub': 'Daily briefings, live scores, reminders, and a smart assistant \u2014 all in the app you already use. Free.',
+                'cta-primary': '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.214L4 20l1.214-3.757A8 8 0 1112 20z"/></svg> Open on WhatsApp',
+                'cta-secondary': 'See what it does \u2193',
+                'features-h2': 'Everything you need.<br>Nothing to install.',
+                'features-p': 'Just send a message. dabbl does the rest.',
+                'feat1-h3': 'Morning Briefing',
+                'feat1-p': 'Weather, news, sports scores, and a daily tip \u2014 delivered to your chat every morning. Say \u201cGood morning\u201d to start your day.',
+                'feat2-h3': 'Live Scores',
+                'feat2-p': 'Liga Portugal, Champions League, World Cup 2026. Real-time scores, lineups, standings \u2014 ask anytime or get alerts.',
+                'feat3-h3': 'Smart Assistant',
+                'feat3-p': 'Ask anything. Translate, write, research, calculate. Powered by the most advanced AI \u2014 in your language, with local context.',
+                'feat4-h3': 'Reminders & Tasks',
+                'feat4-p': '\u201cRemind me to pay rent on the 1st.\u201d Simple reminders in natural language that actually work. No app needed.',
+                'feat5-h3': 'Made for Portugal',
+                'feat5-p': 'European Portuguese. Not Brazilian. Local news, weather, tax deadlines, CTT tracking. Built by people who understand Portugal.',
+                'feat6-h3': 'On WhatsApp',
+                'feat6-p': 'No new app. No account. No password. Just open WhatsApp and start chatting. It\u2019s that simple.',
+                'how-h2': 'Get started in 30 seconds',
+                'step1-h3': 'Click \u201cOpen on WhatsApp\u201d',
+                'step1-p': 'Start a conversation with dabbl \u2014 like messaging a friend.',
+                'step2-h3': 'Say \u201cGood morning\u201d',
+                'step2-p': 'Get your first morning briefing instantly. Weather, news, scores \u2014 personalised for you.',
+                'step3-h3': 'Ask anything',
+                'step3-p': 'Translate a document. Check football scores. Set a reminder. dabbl handles it all.',
+                'wc-h3': 'World Cup <span>2026</span>',
+                'wc-p': 'Live scores, match predictions, standings, stats \u2014 all on your WhatsApp. Portugal is in Group F.',
+                'cd-days': 'Days',
+                'cd-hours': 'Hours',
+                'cd-mins': 'Minutes',
+                'pricing-h2': 'Simple pricing',
+                'pricing-sub': 'Start free. Upgrade when you want more.',
+                'p1-name': 'Free',
+                'p1-amount': '\u20ac0 <span>/ forever</span>',
+                'p1-desc': 'Everything to get started. No commitment.',
+                'p1-f1': '5 messages per day',
+                'p1-f2': 'Briefing on demand (\u201cGood morning\u201d)',
+                'p1-f3': 'Sports scores',
+                'p1-f4': '1 reminder',
+                'p1-f5': 'Local knowledge',
+                'p1-f6': 'European Portuguese (PT-PT)',
+                'p1-f7': 'Basic AI model',
+                'p1-cta': 'Get started',
+                'popular-badge': 'Most popular',
+                'p2-amount': '\u20ac3.99 <span>/ month</span>',
+                'p2-desc': 'Your daily AI companion.',
+                'p2-f1': '20 messages per day',
+                'p2-f2': 'Daily briefing at 7:30',
+                'p2-f3': 'Advanced AI model',
+                'p2-f4': 'Unlimited reminders',
+                'p2-f5': 'Voice notes',
+                'p2-f6': 'No ads',
+                'p2-f7': 'Priority access',
+                'p2-cta': 'Try free',
+                'p3-amount': '\u20ac9.99 <span>/ month</span>',
+                'p3-desc': 'No limits. Your personal analyst.',
+                'p3-f1': '50 messages per day',
+                'p3-f2': 'Morning + evening briefing',
+                'p3-f3': 'Most powerful AI model',
+                'p3-f4': 'Unlimited reminders',
+                'p3-f5': 'Voice notes',
+                'p3-f6': 'Priority responses',
+                'p3-f7': 'Complex tasks & analysis',
+                'p3-cta': 'Coming soon',
+                'final-h2': 'Ready to dabbl?',
+                'final-p': 'Open WhatsApp and say hello. Takes 30 seconds.',
+                'final-cta': '<svg viewBox="0 0 24 24" fill="currentColor" style="width:24px;height:24px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.214L4 20l1.214-3.757A8 8 0 1112 20z"/></svg> Open on WhatsApp',
+                'foot-pricing': 'Pricing',
+                'foot-terms': 'Terms & Conditions',
+                'foot-privacy': 'Privacy Policy',
+                'foot-refund': 'Refund Policy',
+                'foot-tagline': 'by <a href="https://handled.sh" target="_blank">handled.sh</a> \u2014 AI for everyone, everywhere.',
+                'foot-copy': '\u00a9 2026 EXCOM AI. All rights reserved.'
+            }
+        };
+
+        let currentLang = localStorage.getItem('dabbl-lang') || 'pt';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('dabbl-lang', lang);
+            document.documentElement.lang = lang === 'pt' ? 'pt-PT' : 'en';
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-i18n]').forEach(function(el) {
+                var key = el.getAttribute('data-i18n');
+                if (i18n[lang] && i18n[lang][key] !== undefined) {
+                    el.innerHTML = i18n[lang][key];
+                }
+            });
+
+            // Update toggle active state
+            document.querySelectorAll('.lang-option').forEach(function(opt) {
+                opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
+            });
+
+            // Update page title
+            document.title = lang === 'pt'
+                ? 'dabbl.ai \u2014 A tua IA no WhatsApp'
+                : 'dabbl.ai \u2014 Your AI on WhatsApp';
+        }
+
+        // Language toggle click handler
+        document.getElementById('langToggle').addEventListener('click', function() {
+            setLanguage(currentLang === 'pt' ? 'en' : 'pt');
+        });
+
+        // Apply saved language on load
+        if (currentLang !== 'pt') {
+            setLanguage(currentLang);
+        }
+
         // World Cup countdown (June 11, 2026)
         function updateCountdown() {
             const wc = new Date('2026-06-11T00:00:00Z');
