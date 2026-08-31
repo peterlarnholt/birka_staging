@@ -870,7 +870,7 @@
             <div class="feature-card">
                 <div class="feature-icon">⚽</div>
                 <h3 data-i18n="feat2-h3">Resultados em Direto</h3>
-                <p data-i18n="feat2-p">Liga Portugal, Champions League, Mundial 2026. Resultados em tempo real, onzes, classificacoes, pergunta quando quiseres ou recebe alertas.</p>
+                <p data-i18n="feat2-p">Liga Portugal, Champions League, Seleção. Resultados em tempo real, onzes, classificacoes, pergunta quando quiseres ou recebe alertas.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🧠</div>
@@ -923,26 +923,7 @@
         </div>
     </section>
 
-    <!-- World Cup Banner -->
-    <section class="wc-banner">
-        <div class="emoji">⚽</div>
-        <h3 data-i18n="wc-h3">Mundial <span>2026</span></h3>
-        <p data-i18n="wc-p">Resultados em direto, previsoes de jogos, classificacoes, estatisticas, tudo no teu WhatsApp. Portugal esta no Grupo F.</p>
-        <div class="countdown" id="countdown">
-            <div class="countdown-item">
-                <div class="countdown-num" id="days">--</div>
-                <div class="countdown-label" data-i18n="cd-days">Dias</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-num" id="hours">--</div>
-                <div class="countdown-label" data-i18n="cd-hours">Horas</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-num" id="mins">--</div>
-                <div class="countdown-label" data-i18n="cd-mins">Minutos</div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Pricing -->
     <section class="pricing" id="pricing">
@@ -1038,7 +1019,7 @@
                 'feat1-h3': 'Briefing Matinal',
                 'feat1-p': 'Meteorologia, not\u00edcias, resultados desportivos e uma dica di\u00e1ria, entregue no teu chat todas as manh\u00e3s. Diz \u201cBom dia\u201d para come\u00e7ar o teu dia.',
                 'feat2-h3': 'Resultados em Direto',
-                'feat2-p': 'Liga Portugal, Champions League, Mundial 2026. Resultados em tempo real, onzes, classifica\u00e7\u00f5es, pergunta quando quiseres ou recebe alertas.',
+                'feat2-p': 'Liga Portugal, Champions League, Seleção. Resultados em tempo real, onzes, classifica\u00e7\u00f5es, pergunta quando quiseres ou recebe alertas.',
                 'feat3-h3': 'Assistente Inteligente',
                 'feat3-p': 'Pergunta o que quiseres. Traduz, escreve, pesquisa, calcula, na tua l\u00edngua, com o teu contexto local.',
                 'feat4-h3': 'Lembretes e Tarefas',
@@ -1231,25 +1212,7 @@
         }
 
         // World Cup countdown (June 11, 2026)
-        function updateCountdown() {
-            const wc = new Date('2026-06-11T00:00:00Z');
-            const now = new Date();
-            const diff = wc - now;
-
-            if (diff > 0) {
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
-                document.getElementById('days').textContent = days;
-                document.getElementById('hours').textContent = hours;
-                document.getElementById('mins').textContent = mins;
-            }
-        }
-
-        updateCountdown();
-        setInterval(updateCountdown, 60000);
-
+        
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(a => {
             a.addEventListener('click', e => {
