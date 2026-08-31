@@ -908,7 +908,44 @@
     </section>
 
     <!-- Final CTA -->
-    <section class="hero" style="min-height: auto; padding: 4rem 2rem 6rem;" id="start">
+        <!-- Morning card showcase (Miguel's pick, option 2) -->
+    <section style="padding: 5rem 2rem; background: var(--navy-2, #0b1220);">
+      <div style="max-width: 960px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 3rem; justify-content: center;">
+        <div style="flex: 1 1 300px; max-width: 420px;">
+          <h2 style="font-size: 2rem; font-weight: 900; margin: 0 0 0.8rem;" data-i18n="card-h2">O teu dia, às 7h30</h2>
+          <p style="color: #94A3B8; font-size: 1.05rem; line-height: 1.6;" data-i18n="card-p">Todas as manhãs, o dabbl manda-te isto: o tempo, os jogos da noite e as notícias que interessam. Sem abrires mais nada.</p>
+        </div>
+        <div style="flex: 0 1 340px; background: #0F172A; border: 1px solid rgba(255,255,255,.12); border-radius: 22px; padding: 22px 24px; box-shadow: 0 18px 50px rgba(0,0,0,.45); font-size: 15px;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <div>
+              <div style="color: #94A3B8; font-size: 12px;" data-i18n="card-date">segunda-feira · 31 de agosto</div>
+              <div style="font-size: 26px; font-weight: 900; margin-top: 2px;" data-i18n="card-title">O teu dia</div>
+              <div style="color: #6EE7B7; font-size: 13px; margin-top: 2px;">Olá! 👋</div>
+            </div>
+            <div style="background: rgba(255,255,255,.07); border-radius: 14px; padding: 8px 12px; text-align: center;">
+              <div style="font-size: 22px; font-weight: 900;">22°</div>
+              <div style="color: #94A3B8; font-size: 10px;" data-i18n="card-wx">pouco nublado</div>
+            </div>
+          </div>
+          <div style="margin-top: 16px;">
+            <div style="display: flex; align-items: center; gap: 10px; background: rgba(16,185,129,.16); border: 1px solid rgba(16,185,129,.45); border-radius: 12px; padding: 9px 12px;">
+              <span style="font-family: ui-monospace, Menlo, monospace; color: #FBBF24; font-weight: 700; font-size: 13px;">20:15</span>
+              <span>⚽</span><div><div style="font-weight: 700; font-size: 14px;">Benfica x Estoril</div><div style="color: #94A3B8; font-size: 11px;">Primeira Liga</div></div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,.05); border-radius: 12px; padding: 9px 12px; margin-top: 8px;">
+              <span style="font-family: ui-monospace, Menlo, monospace; color: #FBBF24; font-weight: 700; font-size: 13px;">20:15</span>
+              <span>⚽</span><div><div style="font-weight: 700; font-size: 14px;">Braga x Vitória SC</div><div style="color: #94A3B8; font-size: 11px;">Primeira Liga</div></div>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 16px; color: #64748B; font-size: 11px;">
+            <span data-i18n="card-foot">2 jogos da Liga esta noite</span>
+            <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 14px; height: 14px; border-radius: 4px; background: #10B981; color: #0F172A; font-weight: 900; font-size: 10px; display: inline-flex; align-items: center; justify-content: center;">d</span>dabbl</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="hero" style="min-height: auto; padding: 4rem 2rem 6rem;" id="start">
         <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -0.02em; margin-bottom: 1rem;" data-i18n="final-h2">Pronto para dabbl?</h2>
         <p class="hero-sub" style="margin-bottom: 2rem;" data-i18n="final-p">Abre o WhatsApp e diz olá. Demora 30 segundos.</p>
         <a href="https://wa.me/15559009321?text=Ol%C3%A1" class="cta-primary" data-i18n="final-cta" target="_blank" rel="noopener">
@@ -1000,6 +1037,7 @@
                 'p3-cta': 'Em breve',
                 'final-h2': 'Pronto para dabbl?',
                 'final-p': 'Abre o WhatsApp e diz ol\u00e1. Demora 30 segundos.',
+                'card-h2': 'Your day, at 7:30', 'card-p': 'Every morning dabbl sends you this: the weather, tonight\'s games and the news that matters. Nothing else to open.', 'card-date': 'Monday · 31 August', 'card-title': 'Your day', 'card-wx': 'partly cloudy', 'card-foot': '2 league games tonight',
                 'final-cta': '<svg viewBox="0 0 24 24" fill="currentColor" style="width:24px;height:24px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.214L4 20l1.214-3.757A8 8 0 1112 20z"/></svg> Abrir no WhatsApp',
                 'foot-pricing': 'Pricing',
                 'foot-terms': 'Terms & Conditions',
